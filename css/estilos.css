@@ -1,0 +1,124 @@
+:root {
+    --body-bkg-color: rgb(221, 220, 220);
+    --container-bkg-color : red;
+    --star-border-bkg-color: rgb(170, 149, 30);
+    --font-color-edlp: red;
+    --bkg-color-edlp: white;
+    --column-color: white;
+    --tittle: 'E. de L. P.';
+    --font-family-type: 'Roboto';
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bkg-color);
+    box-sizing: border-box;
+    height: 79.1vh;
+}
+
+.star {
+    margin: 30px auto 0;
+    display: block;
+    height: 8.5rem;
+    width: 8.5rem;    
+    animation: beating 2s ease infinite;
+}
+
+@keyframes beating {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+      transform: scale(1.10);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.star_container,
+.star_container::before,
+.star_container::after {
+    width: 0;
+    position: absolute;
+    border-width: 0 4rem 2.5rem 4rem;
+    border-style: solid;
+    border-color: transparent transparent var(--star-border-bkg-color) transparent;
+    transform: rotate(180deg);
+    margin-top: 2rem;
+    margin-left: 0.25rem;
+}
+
+.star_container::before{
+    content: '';
+    margin-top: -0.15rem;
+    margin-left: -4.3rem;
+    transform: rotate(70deg);
+}
+
+.star_container::after{
+    content: '';
+    margin-top: -0.29rem;
+    margin-left: -3.87rem;
+    transform: rotate(-70deg);
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    position: relative;
+    width: 370px;
+    height: 410px;
+    margin: 5px auto 0px;
+    background-color: var(--container-bkg-color);
+    border: 8px solid var(--star-border-bkg-color);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+#contenedor::after {
+    /* E De LP */
+    position: absolute;
+    background-color: var(--bkg-color-edlp);
+    display: block;
+    content: var(--tittle);
+    word-spacing: 6px;
+    font-family: var(--font-family-type), sans-serif;
+    color: var(--font-color-edlp);
+    font-size: 4em;
+    text-align: center;
+    top: 15px;
+    height: 70px;
+    width: 335px;
+}
+
+.columnaVertical {
+    z-index: 1;
+    height: 295px;
+    width: 60px;
+    background-color: var(--column-color);
+    margin-bottom: 10px;
+    border-radius: 0px 0 18px 18px;
+}
+
+#esquinero1 {
+    position: relative;
+}
+
+#esquinero1::after {
+    width: 0;
+    position: absolute;
+    border-width: 0 4rem 2.5rem 4rem;
+    border-style: solid;
+    border-color: transparent transparent var(--star-border-bkg-color) transparent;
+    transform: rotate(180deg);
+    margin-top: 2rem;
+    margin-left: 0.25rem;
+}
